@@ -23,7 +23,7 @@ A Python ETL pipeline that extracts live weather forecast data from the Open-Met
 5. Run the pipeline
 
 \```bash
-git clone https://github.com/yourusername/weather-pipeline.git
+git clone https://github.com/Salista-glitch/weather-pipeline.git
 cd weather-pipeline
 python -m venv venv
 source venv/bin/activate

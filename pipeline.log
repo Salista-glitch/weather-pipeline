@@ -1,0 +1,427 @@
+2026-07-04 18:31:11,962 | INFO | Starting temporary server on http://127.0.0.1:8772
+See https://docs.prefect.io/v3/concepts/server#how-to-guides for more information on running a dedicated Prefect server.
+2026-07-04 18:31:18,920 | INFO | HTTP Request: GET http://127.0.0.1:8772/api/health "HTTP/1.1 200 OK"
+2026-07-04 18:31:19,616 | INFO | HTTP Request: GET http://127.0.0.1:8772/api/admin/version "HTTP/1.1 200 OK"
+2026-07-04 18:31:19,628 | INFO | HTTP Request: GET http://127.0.0.1:8772/api/csrf-token?client=15effaab-3333-4965-a147-52255079504d "HTTP/1.1 422 Unprocessable Entity"
+2026-07-04 18:31:19,653 | INFO | HTTP Request: POST http://127.0.0.1:8772/api/flows/ "HTTP/1.1 200 OK"
+2026-07-04 18:31:19,906 | INFO | HTTP Request: POST http://127.0.0.1:8772/api/flow_runs/ "HTTP/1.1 201 Created"
+2026-07-04 18:31:19,953 | INFO | HTTP Request: POST http://127.0.0.1:8772/api/flow_runs/e660c6ff-b3e2-48b8-b26a-1ff7c900606f/set_state "HTTP/1.1 201 Created"
+2026-07-04 18:31:19,972 | INFO | HTTP Request: GET http://127.0.0.1:8772/api/flow_runs/e660c6ff-b3e2-48b8-b26a-1ff7c900606f "HTTP/1.1 200 OK"
+2026-07-04 18:31:19,985 | INFO | HTTP Request: GET http://127.0.0.1:8772/api/admin/storage "HTTP/1.1 200 OK"
+2026-07-04 18:31:19,998 | INFO | HTTP Request: GET http://127.0.0.1:8772/api/admin/storage "HTTP/1.1 200 OK"
+2026-07-04 18:31:19,999 | INFO | Beginning flow run 'complex-rook' for flow 'weather-etl'
+2026-07-04 18:31:20,009 | INFO | Extracting data from Open-Meteo API
+2026-07-04 18:31:21,162 | INFO | Finished in state Completed()
+2026-07-04 18:31:21,164 | INFO | Transforming dataset
+2026-07-04 18:31:21,216 | ERROR | Error emitting event: prefect.task-run.Completed
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 18:31:21,218 | INFO | Finished in state Completed()
+2026-07-04 18:31:21,228 | ERROR | Error emitting event: prefect.task-run.Pending
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 18:31:21,230 | ERROR | Error emitting event: prefect.task-run.Running
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 18:31:21,234 | ERROR | Error emitting event: prefect.task-run.Completed
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 18:31:21,236 | INFO | Finished in state Completed()
+2026-07-04 18:31:21,241 | ERROR | Error emitting event: prefect.task-run.Pending
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 18:31:21,244 | ERROR | Error emitting event: prefect.task-run.Running
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 18:31:21,254 | ERROR | Error emitting event: prefect.task-run.Completed
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 18:31:21,260 | INFO | Finished in state Completed()
+2026-07-04 18:31:21,264 | ERROR | Error emitting event: prefect.task-run.Pending
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 18:31:21,268 | ERROR | Error emitting event: prefect.task-run.Running
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 18:31:21,282 | ERROR | Error emitting event: prefect.task-run.Completed
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 18:31:21,283 | INFO | Finished in state Completed()
+2026-07-04 18:31:21,289 | ERROR | Error emitting event: prefect.task-run.Pending
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 18:31:21,296 | ERROR | Error emitting event: prefect.task-run.Running
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 18:31:21,302 | ERROR | Error emitting event: prefect.task-run.Completed
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 18:31:21,304 | INFO | Finished in state Completed()
+2026-07-04 18:31:21,313 | ERROR | Error emitting event: prefect.task-run.Pending
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 18:31:21,315 | ERROR | Error emitting event: prefect.task-run.Running
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 18:31:21,322 | ERROR | Error emitting event: prefect.task-run.Completed
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 18:31:21,328 | INFO | Finished in state Completed()
+2026-07-04 18:31:21,332 | ERROR | Error emitting event: prefect.task-run.Pending
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 18:31:21,335 | ERROR | Error emitting event: prefect.task-run.Running
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 18:31:21,343 | ERROR | Error emitting event: prefect.task-run.Completed
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 18:31:21,345 | INFO | Finished in state Completed()
+2026-07-04 18:31:21,351 | ERROR | Error emitting event: prefect.task-run.Completed
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 18:31:21,354 | INFO | Finished in state Completed()
+2026-07-04 18:31:21,359 | INFO | Loading data into Postgres
+2026-07-04 18:31:21,366 | ERROR | Error emitting event: prefect.task-run.Pending
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 18:31:21,371 | ERROR | Error emitting event: prefect.task-run.Running
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 18:31:21,465 | INFO | Loaded 7 rows into weather_data
+2026-07-04 18:31:21,469 | ERROR | Error emitting event: prefect.task-run.Completed
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 18:31:21,470 | INFO | Finished in state Completed()
+2026-07-04 18:31:21,472 | INFO | Pipeline complete
+2026-07-04 18:31:21,526 | INFO | HTTP Request: POST http://127.0.0.1:8772/api/flow_runs/e660c6ff-b3e2-48b8-b26a-1ff7c900606f/set_state "HTTP/1.1 201 Created"
+2026-07-04 18:31:22,059 | INFO | Finished in state Completed()
+2026-07-04 18:31:22,060 | INFO | HTTP Request: GET http://127.0.0.1:8772/api/csrf-token?client=32571f42-144d-479b-8aa1-8304a742f4e4 "HTTP/1.1 422 Unprocessable Entity"
+2026-07-04 18:31:22,094 | INFO | HTTP Request: POST http://127.0.0.1:8772/api/logs/ "HTTP/1.1 201 Created"
+2026-07-04 18:31:22,110 | INFO | HTTP Request: POST http://127.0.0.1:8772/api/logs/ "HTTP/1.1 201 Created"
+2026-07-04 18:31:22,114 | INFO | Stopping temporary server on http://127.0.0.1:8772
+2026-07-04 19:13:03,560 | INFO | Starting temporary server on http://127.0.0.1:8566
+See https://docs.prefect.io/v3/concepts/server#how-to-guides for more information on running a dedicated Prefect server.
+2026-07-04 19:13:11,311 | INFO | HTTP Request: GET http://127.0.0.1:8566/api/health "HTTP/1.1 200 OK"
+2026-07-04 19:13:12,009 | INFO | HTTP Request: GET http://127.0.0.1:8566/api/admin/version "HTTP/1.1 200 OK"
+2026-07-04 19:13:12,026 | INFO | HTTP Request: GET http://127.0.0.1:8566/api/csrf-token?client=6621eb8c-95b0-4951-a602-0470a3b1ff87 "HTTP/1.1 422 Unprocessable Entity"
+2026-07-04 19:13:12,077 | INFO | HTTP Request: POST http://127.0.0.1:8566/api/flows/ "HTTP/1.1 200 OK"
+2026-07-04 19:13:12,135 | INFO | HTTP Request: POST http://127.0.0.1:8566/api/flow_runs/ "HTTP/1.1 503 Service Unavailable"
+2026-07-04 19:13:14,293 | INFO | HTTP Request: POST http://127.0.0.1:8566/api/flow_runs/ "HTTP/1.1 201 Created"
+2026-07-04 19:13:14,345 | INFO | HTTP Request: POST http://127.0.0.1:8566/api/flow_runs/9fee5bc0-2df3-4d62-9980-915676b01fe3/set_state "HTTP/1.1 201 Created"
+2026-07-04 19:13:14,361 | INFO | HTTP Request: GET http://127.0.0.1:8566/api/flow_runs/9fee5bc0-2df3-4d62-9980-915676b01fe3 "HTTP/1.1 200 OK"
+2026-07-04 19:13:14,391 | INFO | HTTP Request: GET http://127.0.0.1:8566/api/admin/storage "HTTP/1.1 200 OK"
+2026-07-04 19:13:14,411 | INFO | HTTP Request: GET http://127.0.0.1:8566/api/admin/storage "HTTP/1.1 200 OK"
+2026-07-04 19:13:14,413 | INFO | Beginning flow run 'zircon-iguana' for flow 'weather-etl'
+2026-07-04 19:13:14,426 | INFO | Extracting data from Open-Meteo API
+2026-07-04 19:13:15,877 | INFO | Finished in state Completed()
+2026-07-04 19:13:15,881 | INFO | Transforming dataset
+2026-07-04 19:13:15,924 | ERROR | Error emitting event: prefect.task-run.Pending
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 19:13:15,956 | ERROR | Error emitting event: prefect.task-run.Running
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 19:13:15,970 | ERROR | Error emitting event: prefect.task-run.Completed
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 19:13:15,972 | INFO | Finished in state Completed()
+2026-07-04 19:13:15,976 | ERROR | Error emitting event: prefect.task-run.Pending
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 19:13:15,981 | ERROR | Error emitting event: prefect.task-run.Running
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 19:13:15,997 | ERROR | Error emitting event: prefect.task-run.Completed
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 19:13:15,999 | INFO | Finished in state Completed()
+2026-07-04 19:13:16,004 | ERROR | Error emitting event: prefect.task-run.Pending
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 19:13:16,007 | ERROR | Error emitting event: prefect.task-run.Running
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 19:13:16,020 | ERROR | Error emitting event: prefect.task-run.Completed
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 19:13:16,021 | INFO | Finished in state Completed()
+2026-07-04 19:13:16,027 | ERROR | Error emitting event: prefect.task-run.Pending
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 19:13:16,030 | ERROR | Error emitting event: prefect.task-run.Running
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 19:13:16,038 | ERROR | Error emitting event: prefect.task-run.Completed
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 19:13:16,040 | INFO | Finished in state Completed()
+2026-07-04 19:13:16,045 | ERROR | Error emitting event: prefect.task-run.Pending
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 19:13:16,048 | ERROR | Error emitting event: prefect.task-run.Running
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 19:13:16,053 | ERROR | Error emitting event: prefect.task-run.Completed
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 19:13:16,054 | INFO | Finished in state Completed()
+2026-07-04 19:13:16,058 | ERROR | Error emitting event: prefect.task-run.Pending
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 19:13:16,063 | ERROR | Error emitting event: prefect.task-run.Running
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 19:13:16,069 | ERROR | Error emitting event: prefect.task-run.Completed
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 19:13:16,071 | INFO | Finished in state Completed()
+2026-07-04 19:13:16,078 | ERROR | Error emitting event: prefect.task-run.Pending
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 19:13:16,081 | ERROR | Error emitting event: prefect.task-run.Running
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 19:13:16,087 | ERROR | Error emitting event: prefect.task-run.Completed
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 19:13:16,095 | INFO | Finished in state Completed()
+2026-07-04 19:13:16,102 | ERROR | Error emitting event: prefect.task-run.Completed
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 19:13:16,114 | INFO | Finished in state Completed()
+2026-07-04 19:13:16,115 | INFO | Validating data quality
+2026-07-04 19:13:16,130 | ERROR | Error emitting event: prefect.task-run.Pending
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 19:13:16,134 | ERROR | Error emitting event: prefect.task-run.Running
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 19:13:16,194 | INFO | Data validation passed — 7 rows, all checks clean
+2026-07-04 19:13:16,200 | ERROR | Error emitting event: prefect.task-run.Completed
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 19:13:16,202 | INFO | Finished in state Completed()
+2026-07-04 19:13:16,204 | INFO | Loading data into Postgres
+2026-07-04 19:13:16,212 | ERROR | Error emitting event: prefect.task-run.Pending
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 19:13:16,215 | ERROR | Error emitting event: prefect.task-run.Running
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 19:13:16,373 | INFO | Loaded 7 rows into weather_data
+2026-07-04 19:13:16,378 | ERROR | Error emitting event: prefect.task-run.Completed
+Traceback (most recent call last):
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/events/utilities.py", line 105, in emit_event
+    worker_instance.send(event_obj)
+  File "/home/tendai/data-engineering/venv/lib/python3.12/site-packages/prefect/_internal/concurrency/services.py", line 348, in send
+    raise RuntimeError("Cannot put items in a stopped service instance.")
+RuntimeError: Cannot put items in a stopped service instance.
+2026-07-04 19:13:16,380 | INFO | Finished in state Completed()
+2026-07-04 19:13:16,382 | INFO | Pipeline complete
+2026-07-04 19:13:16,428 | INFO | HTTP Request: POST http://127.0.0.1:8566/api/flow_runs/9fee5bc0-2df3-4d62-9980-915676b01fe3/set_state "HTTP/1.1 201 Created"
+2026-07-04 19:13:16,488 | INFO | Finished in state Completed()
+2026-07-04 19:13:16,493 | INFO | HTTP Request: GET http://127.0.0.1:8566/api/csrf-token?client=a7063c8d-6927-416c-b332-9262010017f5 "HTTP/1.1 422 Unprocessable Entity"
+2026-07-04 19:13:16,546 | INFO | HTTP Request: POST http://127.0.0.1:8566/api/logs/ "HTTP/1.1 201 Created"
+2026-07-04 19:13:16,571 | INFO | HTTP Request: POST http://127.0.0.1:8566/api/logs/ "HTTP/1.1 201 Created"
+2026-07-04 19:13:16,580 | INFO | Stopping temporary server on http://127.0.0.1:8566

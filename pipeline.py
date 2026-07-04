@@ -1,8 +1,19 @@
 import requests
 import pandas as pd
 import psycopg2
-from prefect import task, flow
+import logging
+from prefect import task, flow, get_run_logger
 
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s | %(levelname)s | %(message)s",
+    handlers=[
+        logging.FileHandler("pipeline.log"),
+        logging.StreamHandler()
+    ],
+    force=True
+)
+logger = logging.getLogger(__name__)
 
 @task
 def extract():
@@ -14,9 +25,50 @@ def extract():
         "timezone": "Africa/Johannesburg",
         "forecast_days": 7
     }
-    response = requests.get(url, params=params)
-    data = response.json()
-    return data["daily"]
+    try:
+        response = requests.get(url, params=params, timeout=10)
+        response.raise_for_status()
+        data = response.json()
+        return data["daily"]
+    except requests.exceptions.Timeout:
+        raise Exception("API request timed out after 10 seconds")
+    except requests.exceptions.HTTPError as e:
+        raise Exception(f"API returned an error: {e}")
+    except Exception as e:
+        raise Exception(f"Extraction failed: {e}")
+
+
+@task
+def validate(df):
+    logger = get_run_logger()
+    errors = []
+
+    # Check we have rows
+    if len(df) == 0:
+        errors.append("DataFrame is empty — no data returned from API")
+
+    # Check expected columns exist
+    expected_columns = ["date", "max_temp", "min_temp", "precipitation"]
+    for col in expected_columns:
+        if col not in df.columns:
+            errors.append(f"Missing expected column: {col}")
+
+    # Check for nulls in critical columns
+    for col in ["date", "max_temp", "min_temp"]:
+        if df[col].isnull().any():
+            errors.append(f"Null values found in column: {col}")
+
+    # Check temperature makes physical sense
+    if (df["max_temp"] < df["min_temp"]).any():
+        errors.append("max_temp is less than min_temp in one or more rows")
+
+    if errors:
+        for error in errors:
+            logger.error(f"Data quality check failed: {error}")
+        raise Exception(f"Validation failed with {len(errors)} error(s)")
+
+    logger.info(f"Data validation passed — {len(df)} rows, all checks clean")
+    return df
 
 @task
 def classify_temp(temp):
@@ -45,6 +97,9 @@ def transform(daily):
 
 @task
 def load(df):
+
+    logger = get_run_logger()
+
     conn = psycopg2.connect(
         host="localhost",
         database="weather_pipeline",
@@ -85,18 +140,23 @@ def load(df):
     conn.commit()
     cursor.close()
     conn.close()
-    print(f"Loaded {len(df)} rows into weather_data")
+    logger.info(f"Loaded {len(df)} rows into weather_data")
 
 
-@flow(name="weather-etl", log_prints=True)
+@flow(name="weather-etl")
 def run_pipeline():
-    print("Extracting...")
+
+    logger = get_run_logger()
+
+    logger.info("Extracting data from Open-Meteo API")
     daily = extract()
-    print("Transforming...")
+    logger.info("Transforming dataset")
     df = transform(daily)
-    print("Loading...")
+    logger.info("Validating data quality")
+    df = validate(df)
+    logger.info("Loading data into Postgres")
     load(df)
-    print("Pipeline complete.")
+    logger.info("Pipeline complete")
 
 if __name__ == "__main__":
     run_pipeline()

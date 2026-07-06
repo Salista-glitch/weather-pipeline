@@ -3,3 +3,4 @@ __pycache__/
 *.pyc
 lesson_01.ipynb
 .ipynb_checkpoints/gcp-credentials.json
+gcp-credentials.json

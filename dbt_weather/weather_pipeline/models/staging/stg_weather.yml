@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: stg_weather
+    description: "Cleaned and typed weather forecast data from Open-Meteo"
+    columns:
+      - name: date
+        description: "Forecast date"
+        tests:
+          - not_null
+          - unique
+      - name: city
+        description: "City name"
+        tests:
+          - not_null
+      - name: max_temp
+        description: "Maximum temperature in Celsius"
+        tests:
+          - not_null
+      - name: min_temp
+        description: "Minimum temperature in Celsius"
+        tests:
+          - not_null
+      - name: condition
+        description: "Temperature classification"
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['hot', 'mild', 'cold']

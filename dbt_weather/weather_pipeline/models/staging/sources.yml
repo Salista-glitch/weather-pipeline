@@ -1,0 +1,9 @@
+
+version: 2
+
+sources:
+  - name: weather_data
+    project: white-dispatch-495014-u6
+    dataset: weather_data
+    tables:
+      - name: daily_forecasts

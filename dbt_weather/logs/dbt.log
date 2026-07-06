@@ -1,0 +1,28 @@
+
+
+============================== 14:35:49.652272 | 3e9af753-7118-48da-b82b-b92596cdd430 ==============================
+[0m14:35:49.652272 [info ] [MainThread]: Running with dbt=1.11.12
+[0m14:35:49.681939 [debug] [MainThread]: running dbt with arguments {'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_cache_events': 'False', 'introspect': 'True', 'debug': 'False', 'partial_parse': 'True', 'version_check': 'True', 'use_colors': 'True', 'cache_selected_only': 'False', 'static_parser': 'True', 'profiles_dir': '/home/tendai/.dbt', 'fail_fast': 'False', 'use_experimental_parser': 'False', 'send_anonymous_usage_stats': 'False', 'warn_error': 'None', 'printer_width': '80', 'log_format': 'default', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'indirect_selection': 'eager', 'log_path': 'logs', 'invocation_command': 'dbt init weather_pipeline', 'target_path': 'None', 'write_json': 'True'}
+[0m14:35:49.819792 [info ] [MainThread]: Creating dbt configuration folder at /home/tendai/.dbt
+[0m14:35:49.845923 [debug] [MainThread]: Starter project path: /home/tendai/data-engineering/venv/lib/python3.12/site-packages/dbt/include/starter_project
+[0m14:35:49.935882 [info ] [MainThread]: 
+Your new dbt project "weather_pipeline" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m14:35:49.936699 [info ] [MainThread]: Setting up your profile.
+[0m14:37:37.412324 [info ] [MainThread]: Profile weather_pipeline written to /home/tendai/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m14:37:37.414821 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 113.28327, "process_in_blocks": "39552", "process_kernel_time": 1.206457, "process_mem_max_rss": "216236", "process_out_blocks": "80", "process_user_time": 5.533071}
+[0m14:37:37.417982 [debug] [MainThread]: Command `dbt init` succeeded at 14:37:37.417219 after 113.29 seconds
+[0m14:37:37.419189 [debug] [MainThread]: Flushing usage events

@@ -2,4 +2,4 @@ venv/
 __pycache__/
 *.pyc
 lesson_01.ipynb
-.ipynb_checkpoints/
+.ipynb_checkpoints/gcp-credentials.json

@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: weather_summary
+    description: "Aggregated weekly weather summary by city"
+    columns:
+      - name: city
+        description: "City name"
+        tests:
+          - not_null
+          - unique
+      - name: forecast_days
+        description: "Number of forecast days"
+        tests:
+          - not_null
+      - name: avg_max_temp
+        description: "Average maximum temperature"
+        tests:
+          - not_null
